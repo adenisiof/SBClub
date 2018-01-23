@@ -1,0 +1,45 @@
+﻿<Window x:Class="SBClub.lancarPontos" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SBClub"
+        mc:Ignorable="d"
+       WindowStyle="ToolWindow"
+        Title="lancarPontos" Height="547" Width="460" Background="White"
+        WindowStartupLocation="CenterScreen">
+    <Grid x:Name="lblNome" Background="White" Margin="0,0,-8,0" >
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="31" Margin="0,118,0,0" VerticalAlignment="Top" Width="460"/>
+
+
+        <Border BorderBrush="#00000000" BorderThickness="1" HorizontalAlignment="Left" Height="103" Margin="0,420,0,-6" VerticalAlignment="Top" Width="460" Background="#FFE6E7E9"/>
+
+
+        <Image x:Name="imgLogo" HorizontalAlignment="Center" Height="106" VerticalAlignment="Top" Width="304" Source="Images/SBClubLogo.jpg" Stretch="Fill" Margin="86,0,60,0"/>
+        <Image x:Name="imgLogo_Copy" HorizontalAlignment="Center" Height="97" VerticalAlignment="Top" Width="316" Source="Images/atendimento.jpg" Stretch="Fill" Margin="79,420,65,0"/>
+        <CheckBox x:Name="ckbCpf" Content="CPF" HorizontalAlignment="Left" Margin="140,120,0,0" VerticalAlignment="Top" FontSize="18" RenderTransformOrigin="0.956,2.095" Checked="ckbCpf_Checked"/>
+        <CheckBox x:Name="ckbId" Content="id" HorizontalAlignment="Left" Margin="286,120,0,0" VerticalAlignment="Top" FontSize="18" RenderTransformOrigin="0.959,-0.788"  Checked="ckbId_Checked"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="13" Margin="0,149,0,0" VerticalAlignment="Top" Width="460" Background="#FFFE7B04"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="32" Margin="0,284,0,0" VerticalAlignment="Top" Width="460" Background="#FFFE7B04">
+            <Label Content="Lancar Pontos" Margin="127,0,148,0" Background="{x:Null}" HorizontalAlignment="Center" Width="183" FontWeight="Bold" FontSize="20" Foreground="#DDFFFFFF" Padding="5,0,5,5" HorizontalContentAlignment="Center" />
+        </Border>
+        <TextBox x:Name="txtNumeroLP" HorizontalAlignment="Left" Height="24" Margin="91,172,0,0" TextWrapping="Wrap" Text="Número" VerticalAlignment="Top" Width="304" FontSize="14" FontWeight="Bold" GotFocus="txtNumeroLP_GotFocus" BorderBrush="#89464444" />
+
+        <Button Content="Autenticar" HorizontalAlignment="Left" Margin="230,210,0,0" VerticalAlignment="Top" Width="165" RenderTransformOrigin="0.518,-0.5" Click="btnAutenticar_Click"/>
+        <Label Content="Valor Gasto:" HorizontalAlignment="Left" Margin="88,362,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Width="89" Padding="0,5,5,5"/>
+        <Button x:Name="btnLancarLP" Content="Lançar" HorizontalAlignment="Left" Margin="286,380,0,0" VerticalAlignment="Top" Width="109" RenderTransformOrigin="0.656,-0.562" Click="btnLancarLP_Click"/>
+        <TextBox x:Name="txtNome" HorizontalAlignment="Center" Height="32" Margin="91,247,65,0" TextWrapping="Wrap" Text="Nome Associado" VerticalAlignment="Top" Width="304" FontSize="14" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True"/>
+        <ComboBox x:Name="cmbFormaPagamento" HorizontalAlignment="Left" Margin="91,321,0,0" VerticalAlignment="Top" Width="304" SelectedIndex="0" FontWeight="Bold" FontSize="14">
+            <ComboBoxItem Content="Forma de Pagamento" HorizontalAlignment="Left" Width="302"/>
+            <ComboBoxItem Content="Plano 1/1" HorizontalAlignment="Left" Width="302"/>
+            <ComboBoxItem Content="Plano 2/1" HorizontalAlignment="Left" Width="302"/>
+            <ComboBoxItem Content="Plano 3/1" HorizontalAlignment="Left" Width="302"/>
+            <ComboBoxItem Content="Plano 4/1" HorizontalAlignment="Left" Width="302"/>
+            
+        </ComboBox>
+        <Label Content="R$" HorizontalAlignment="Left" Margin="63,385,0,0" VerticalAlignment="Top" Width="37" FontWeight="Bold" FontSize="16" Height="34"/>
+        <TextBox x:Name="txtValorGasto" HorizontalAlignment="Left" Height="27" Margin="91,385,0,0" TextWrapping="Wrap" Text="0,00" VerticalAlignment="Top" Width="151" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Left" FontWeight="Bold" Padding="2,0,0,0" FontFamily="Segoe UI Black" Background="#00000000" Foreground="#FF2B2929" GotFocus="ValorGasto_Focus"/>
+
+
+    </Grid>
+</Window>

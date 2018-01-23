@@ -1,0 +1,40 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SBClub"
+        xmlns:DAL="clr-namespace:SBClub.Layers.DAL" x:Class="SBClub.Resumo"
+        mc:Ignorable="d"
+        Title="Resumo" 
+        Height="547" 
+        Width="460"
+        MinHeight="500"
+        MinWidth="400"
+        MaxHeight="700"
+        MaxWidth="700"
+        WindowStyle="ToolWindow"
+         WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <local:DBLocalDataSet x:Key="dBLocalDataSet"/>
+        <CollectionViewSource x:Key="associadosViewSource" Source="{Binding associados, Source={StaticResource dBLocalDataSet}}"/>
+    </Window.Resources>
+    <Grid x:Name="gridResumo" DataContext="{StaticResource associadosViewSource}">
+        <Image x:Name="imgLogo_Copy" HorizontalAlignment="Center" Height="106" VerticalAlignment="Top" Width="293" Source="Images/atendimento.jpg" Stretch="Fill" Margin="159,408,0,0"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="108" Margin="-1,408,-159,-247" VerticalAlignment="Top" Width="452" Background="#FFE6E7E9">
+            <Button x:Name="btnImprimir_click" Content="Resumo" Height="Auto" Margin="61,25,58,26" Background="#FFFE7F01" FontSize="24" FontWeight="Bold" BorderThickness="1" BorderBrush="#00673AB7" Padding="16,0" Click="Imprimir_Click" RenderTransformOrigin="0.38,0.448"/>
+        </Border>
+
+        <Image x:Name="imgLogo" HorizontalAlignment="Center" Height="106" VerticalAlignment="Top" Width="316" Source="Images/SBClubLogo.jpg" Stretch="Fill" Margin="70,5,66,0" RenderTransformOrigin="0.596,0.498"/>
+        <Border BorderBrush="#00000000" BorderThickness="1" HorizontalAlignment="Left" Height="36" Margin="-1,111,-159,0" VerticalAlignment="Top" Width="452" Background="#FFFE7F01">
+            <Label Content="Resumo" Foreground="#DDFFFFFF" HorizontalAlignment="Center" FontSize="24" Padding="5,0,5,5" FontWeight="Bold"/>
+        </Border>
+        
+            <Grid x:Name="gMain" Margin="0,152,10,109" MinHeight="100" Height="240" Panel.ZIndex="-1">
+            <ScrollViewer x:Name="svResumo" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Visible" Margin="10,0,-10,0"></ScrollViewer>
+        </Grid>
+    </Grid>
+
+       
+   
+</Window>
